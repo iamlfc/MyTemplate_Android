@@ -1,6 +1,0 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-
-    <declare-styleable name="SearchHistoryView">
-        <attr name="title" format="reference|string" />
-    </declare-styleable>
-</resources>

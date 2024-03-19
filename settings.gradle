@@ -1,9 +1,14 @@
 pluginManagement {
     repositories {
-        gradlePluginPortal()
         google()
         mavenCentral()
+        jcenter()
+        gradlePluginPortal()
         maven { url 'https://jitpack.io' }
+        maven { url 'https://repo1.maven.org/maven2/' }
+        maven { url "https://mirrors.tencent.com/repository/maven/tencent_public" }
+        maven { url "https://mirrors.tencent.com/repository/maven/liteavsdk" }
+        maven { url "https://mirrors.tencent.com/nexus/repository/maven-public/" }
     }
 }
 dependencyResolutionManagement {
@@ -11,16 +16,19 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        jcenter()
         maven { url 'https://jitpack.io' }
+        maven { url 'https://repo1.maven.org/maven2/' }
+        maven { url "https://mvn.getui.com/nexus/content/repositories/releases/" }
+        maven { url "https://mirrors.tencent.com/repository/maven/tencent_public" }
+        maven { url "https://mirrors.tencent.com/repository/maven/liteavsdk" }
+        maven { url "https://mirrors.tencent.com/nexus/repository/maven-public/" }
     }
 }
-rootProject.name = "SumTea_Android"
+rootProject.name = "MyTemplate_Android"
 include ':app'
 include ':mod_main'
-include ':mod_user'
 include ':mod_login'
-include ':mod_search'
-include ':mod_video'
 include ':lib_framework'
 include ':lib_common'
 include ':lib_network'
@@ -28,4 +36,3 @@ include ':lib_stater'
 include ':lib_banner'
 include ':lib_glide'
 include ':lib_room'
-include ':mod_demo'

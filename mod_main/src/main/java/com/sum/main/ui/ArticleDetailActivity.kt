@@ -8,12 +8,14 @@ import com.sum.common.constant.KEY_TITLE
 import com.sum.common.constant.KEY_URL
 import com.sum.framework.base.BaseDataBindActivity
 import com.sum.main.databinding.ActivityArticleDetailBinding
+import com.sum.main.viewModel.MainViewModel
 import com.tencent.smtt.export.external.interfaces.SslError
 import com.tencent.smtt.export.external.interfaces.SslErrorHandler
 import com.tencent.smtt.sdk.ValueCallback
 import com.tencent.smtt.sdk.WebChromeClient
 import com.tencent.smtt.sdk.WebView
 import com.tencent.smtt.sdk.WebViewClient
+import org.koin.android.compat.ScopeCompat.viewModel
 
 /**
  * @author mingyan.su

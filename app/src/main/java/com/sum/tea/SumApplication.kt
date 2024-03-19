@@ -10,12 +10,18 @@ import com.sum.framework.manager.AppFrontBackListener
 import com.sum.framework.log.LogUtil
 import com.sum.framework.manager.ActivityManager
 import com.sum.framework.toast.TipsToast
+import com.sum.login.di.moduleLogin
+import com.sum.main.di.moduleMain
 import com.sum.stater.dispatcher.TaskDispatcher
 import com.sum.tea.task.InitMmkvTask
 import com.sum.tea.task.InitAppManagerTask
 import com.sum.tea.task.InitRefreshLayoutTask
 import com.sum.tea.task.InitArouterTask
 import com.sum.tea.task.InitSumHelperTask
+import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidLogger
+import org.koin.core.context.loadKoinModules
+import org.koin.core.context.startKoin
 
 /**
  * @author mingyan.su
@@ -24,6 +30,12 @@ import com.sum.tea.task.InitSumHelperTask
  */
 class SumApplication : Application() {
 
+    private val modules = arrayListOf(
+        moduleLogin, //登录模块
+        moduleMain, //主应用模块
+    )
+
+
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
         MultiDex.install(base)
@@ -31,7 +43,7 @@ class SumApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-
+        initKoin()
         //注册APP前后台切换监听
         appFrontBackRegister()
         // App启动立即注册监听
@@ -55,6 +67,14 @@ class SumApplication : Application() {
         dispatcher.await()
     }
 
+    //koin
+    private fun initKoin() {
+        startKoin {
+            androidLogger()
+            androidContext(this@SumApplication)
+            loadKoinModules(modules)
+        }
+    }
     /**
      * 注册APP前后台切换监听
      */

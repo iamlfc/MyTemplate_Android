@@ -7,6 +7,8 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.sum.common.constant.Login_ACTIVITY_POLICY
 import com.sum.framework.base.BaseDataBindActivity
 import com.sum.login.databinding.ActivityPrivacyPolicyBinding
+import com.sum.login.login.LoginViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * @author mingyan.su
@@ -15,6 +17,7 @@ import com.sum.login.databinding.ActivityPrivacyPolicyBinding
  */
 @Route(path = Login_ACTIVITY_POLICY)
 class PrivacyPolicyActivity : BaseDataBindActivity<ActivityPrivacyPolicyBinding>() {
+    private val loginViewModel by viewModel<LoginViewModel>()
 
     companion object {
         fun start(context: Context) {
@@ -24,6 +27,5 @@ class PrivacyPolicyActivity : BaseDataBindActivity<ActivityPrivacyPolicyBinding>
     }
 
     override fun initView(savedInstanceState: Bundle?) {
-
     }
 }
