@@ -16,18 +16,20 @@ import com.sum.main.R
 import com.sum.main.databinding.FragmentCategoryBinding
 import com.sum.main.ui.category.adapter.CategoryTabAdapter
 import com.sum.main.ui.category.viewmodel.CategoryViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * @author mingyan.su
  * @date   2023/3/3 8:10
  * @desc   分类
  */
-class CategoryFragment : BaseMvvmFragment<FragmentCategoryBinding, CategoryViewModel>() {
+class CategoryFragment : BaseMvvmFragment<FragmentCategoryBinding>() {
     //当前选中的position
     private var mCurrentSelectPosition = 0
     private var fragments = SparseArray<Fragment>()
     private lateinit var mTabAdapter: CategoryTabAdapter
     private var mViewPagerAdapter: ViewPage2FragmentAdapter? = null
+    private val mViewModel: CategoryViewModel by viewModel()
 
     override fun initView(view: View, savedInstanceState: Bundle?) {
         initTabRecyclerView()

@@ -22,16 +22,19 @@ import com.sum.framework.ext.visible
 import com.sum.framework.utils.getStringFromResource
 import com.sum.main.R
 import com.sum.main.databinding.FragmentHomeBinding
+import com.sum.main.ui.category.viewmodel.CategoryViewModel
 import com.sum.main.ui.home.viewmodel.HomeViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * @author mingyan.su
  * @date   2023/3/3 8:16
  * @desc   首页
  */
-class HomeFragment : BaseMvvmFragment<FragmentHomeBinding, HomeViewModel>(), OnRefreshListener {
+class HomeFragment : BaseMvvmFragment<FragmentHomeBinding>(), OnRefreshListener {
 
     private val mArrayTabFragments = SparseArray<Fragment>()
+    private val mViewModel: HomeViewModel by viewModel()
 
     private var mTabLayoutMediator: TabLayoutMediator? = null
     private var mFragmentAdapter: ViewPage2FragmentAdapter? = null

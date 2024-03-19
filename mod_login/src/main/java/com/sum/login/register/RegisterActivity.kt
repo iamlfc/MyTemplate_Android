@@ -35,6 +35,7 @@ import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * @author mingyan.su
@@ -42,7 +43,8 @@ import kotlinx.coroutines.flow.onEach
  * @desc   注册
  */
 @Route(path = LOGIN_ACTIVITY_REGISTER)
-class RegisterActivity : BaseMvvmActivity<ActivityRegisterBinding, LoginViewModel>() {
+class RegisterActivity : BaseMvvmActivity<ActivityRegisterBinding>() {
+    private val mViewModel: LoginViewModel by viewModel()
 
     companion object {
         fun start(context: Context) {

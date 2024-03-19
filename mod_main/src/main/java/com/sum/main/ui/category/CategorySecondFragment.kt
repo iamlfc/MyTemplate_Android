@@ -16,14 +16,16 @@ import com.sum.main.R
 import com.sum.main.databinding.FragmentCategorySecondBinding
 import com.sum.main.ui.category.adapter.CategorySecondItemAdapter
 import com.sum.main.ui.category.viewmodel.CategoryViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * @author mingyan.su
  * @date   2023/3/19 22:31
  * @desc   分类item
  */
-class CategorySecondFragment : BaseMvvmFragment<FragmentCategorySecondBinding, CategoryViewModel>() {
+class CategorySecondFragment : BaseMvvmFragment<FragmentCategorySecondBinding>() {
     private lateinit var mAdapter: CategorySecondItemAdapter
+    private val mViewModel: CategoryViewModel by viewModel()
 
     companion object {
         fun newInstance(jsonStr: String): CategorySecondFragment {

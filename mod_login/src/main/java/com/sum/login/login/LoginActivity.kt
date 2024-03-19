@@ -33,6 +33,7 @@ import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * @author mingyan.su
@@ -40,8 +41,9 @@ import kotlinx.coroutines.flow.onEach
  * @desc   登录
  */
 @Route(path = LOGIN_ACTIVITY_LOGIN)
-class LoginActivity : BaseMvvmActivity<ActivityLoginBinding, LoginViewModel>() {
+class LoginActivity : BaseMvvmActivity<ActivityLoginBinding>() {
     private var isShowPassword = true
+    private val mViewModel: LoginViewModel by viewModel()
 
     override fun initView(savedInstanceState: Bundle?) {
         initAgreement()
@@ -107,13 +109,13 @@ class LoginActivity : BaseMvvmActivity<ActivityLoginBinding, LoginViewModel>() {
     private fun setEditTextChange(editText: EditText) {
         editText.textChangeFlow()
 //                .filter { it.isNotEmpty() }
-                .debounce(300)
-                //.flatMapLatest { searchFlow(it.toString()) }
-                .flowOn(Dispatchers.IO)
-                .onEach {
-                    updateLoginState()
-                }
-                .launchIn(lifecycleScope)
+            .debounce(300)
+            //.flatMapLatest { searchFlow(it.toString()) }
+            .flowOn(Dispatchers.IO)
+            .onEach {
+                updateLoginState()
+            }
+            .launchIn(lifecycleScope)
     }
 
     /**
@@ -167,7 +169,8 @@ class LoginActivity : BaseMvvmActivity<ActivityLoginBinding, LoginViewModel>() {
             spaBuilder.setSpan(
                 object : ClickableSpan() {
                     override fun onClick(widget: View) {
-                        (widget as TextView).highlightColor = getColorFromResource(com.sum.common.R.color.transparent)
+                        (widget as TextView).highlightColor =
+                            getColorFromResource(com.sum.common.R.color.transparent)
                         PrivacyPolicyActivity.start(this@LoginActivity)
                     }
 
@@ -186,7 +189,8 @@ class LoginActivity : BaseMvvmActivity<ActivityLoginBinding, LoginViewModel>() {
             spaBuilder.setSpan(
                 object : ClickableSpan() {
                     override fun onClick(widget: View) {
-                        (widget as TextView).highlightColor = getColorFromResource(com.sum.common.R.color.transparent)
+                        (widget as TextView).highlightColor =
+                            getColorFromResource(com.sum.common.R.color.transparent)
                         PrivacyPolicyActivity.start(this@LoginActivity)
                     }
 

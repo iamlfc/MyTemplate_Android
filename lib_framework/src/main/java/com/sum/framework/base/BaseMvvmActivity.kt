@@ -12,8 +12,8 @@ import java.lang.reflect.ParameterizedType
  * @date   2023/2/27 12:18
  * @desc   DataBinding+ViewModel基类
  */
-abstract class BaseMvvmActivity<DB : ViewBinding, VM : ViewModel> : BaseDataBindActivity<DB>() {
-    lateinit var mViewModel: VM
+abstract class BaseMvvmActivity<DB : ViewBinding > : BaseDataBindActivity<DB>() {
+//    lateinit var mViewModel: VM
 
     override fun onCreate(savedInstanceState: Bundle?) {
         initViewModel()
@@ -22,7 +22,7 @@ abstract class BaseMvvmActivity<DB : ViewBinding, VM : ViewModel> : BaseDataBind
 
     private fun initViewModel() {
         val argument = (this.javaClass.genericSuperclass as ParameterizedType).actualTypeArguments
-        mViewModel = ViewModelProvider(this).get(argument[1] as Class<VM>)
+//        mViewModel = ViewModelProvider(this).get(argument[1] as Class<VM>)
 
         //兼容性优化
 //        val superclass = javaClass.superclass//超类

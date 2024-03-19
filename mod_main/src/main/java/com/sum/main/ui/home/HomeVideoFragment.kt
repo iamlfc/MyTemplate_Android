@@ -19,6 +19,7 @@ import com.sum.main.ui.home.adapter.HomeVideoItemAdapter
 import com.sum.main.ui.home.viewmodel.HomeViewModel
 import com.sum.room.entity.VideoInfo
 import com.tbruyelle.rxpermissions3.RxPermissions
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.ArrayList
 
 /**
@@ -26,8 +27,10 @@ import java.util.ArrayList
  * @date   2023/3/5 20:11
  * @desc   首页视频列表
  */
-class HomeVideoFragment : BaseMvvmFragment<FragmentHomeVideoBinding, HomeViewModel>() {
+class HomeVideoFragment : BaseMvvmFragment<FragmentHomeVideoBinding>() {
     lateinit var videoAdapter: HomeVideoItemAdapter
+    private val mViewModel: HomeViewModel by viewModel()
+
     override fun initView(view: View, savedInstanceState: Bundle?) {
 
         val spanCount = 2

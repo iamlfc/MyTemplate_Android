@@ -33,9 +33,11 @@ import com.sum.glide.loadFile
 import com.sum.main.R
 import com.sum.main.databinding.FragmentMineBinding
 import com.sum.main.databinding.FragmentMineHeadBinding
+import com.sum.main.ui.home.viewmodel.HomeViewModel
 import com.sum.main.ui.mine.viewmodel.MineViewModel
 import com.sum.main.ui.system.adapter.ArticleAdapter
 import com.sum.network.error.ERROR
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.io.File
 
 /**
@@ -43,8 +45,10 @@ import java.io.File
  * @date   2023/3/3 8:22
  * @desc   我的
  */
-class MineFragment : BaseMvvmFragment<FragmentMineBinding, MineViewModel>(), OnRefreshListener,
+class MineFragment : BaseMvvmFragment<FragmentMineBinding>(), OnRefreshListener,
     OnLoadMoreListener {
+    private val mViewModel: MineViewModel by viewModel()
+
     // 页码
     private var mPage = 0
     // 头布局

@@ -11,15 +11,18 @@ import com.sum.framework.utils.dpToPx
 import com.sum.main.R
 import com.sum.main.databinding.FragmentSystemBinding
 import com.sum.main.ui.system.adapter.SystemAdapter
+import com.sum.main.ui.system.viewmodel.ArticleListViewModel
 import com.sum.main.ui.system.viewmodel.SystemViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * @author mingyan.su
  * @date   2023/3/3 8:18
  * @desc   体系
  */
-class SystemFragment : BaseMvvmFragment<FragmentSystemBinding, SystemViewModel>() {
+class SystemFragment : BaseMvvmFragment<FragmentSystemBinding>() {
     private lateinit var mAdapter: SystemAdapter
+    private val mViewModel: SystemViewModel by viewModel()
 
     override fun initView(view: View, savedInstanceState: Bundle?) {
         mAdapter = SystemAdapter()

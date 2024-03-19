@@ -17,17 +17,19 @@ import com.sum.main.R
 import com.sum.main.databinding.FragmentHomeVideoBinding
 import com.sum.main.ui.home.adapter.HomeTabItemAdapter
 import com.sum.main.ui.home.viewmodel.HomeViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * @author mingyan.su
  * @date   2023/3/5 20:11
  * @desc   首页资讯列表
  */
-class HomeTabFragment : BaseMvvmFragment<FragmentHomeVideoBinding, HomeViewModel>(), OnRefreshListener,
+class HomeTabFragment : BaseMvvmFragment<FragmentHomeVideoBinding>(), OnRefreshListener,
     OnLoadMoreListener {
     private var mPage = 1
     private var mId: Int? = null
     private lateinit var mAdapter: HomeTabItemAdapter
+    private val mViewModel: HomeViewModel by viewModel()
 
     companion object {
         fun newInstance(id: Int): HomeTabFragment {

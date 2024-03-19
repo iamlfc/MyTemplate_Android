@@ -14,20 +14,23 @@ import com.sum.framework.decoration.NormalItemDecoration
 import com.sum.framework.toast.TipsToast
 import com.sum.framework.utils.dpToPx
 import com.sum.main.databinding.FragmentArticleListBinding
+import com.sum.main.ui.mine.viewmodel.MineViewModel
 import com.sum.main.ui.system.adapter.ArticleAdapter
 import com.sum.main.ui.system.viewmodel.ArticleListViewModel
 import com.sum.network.error.ERROR
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * @author mingyan.su
  * @date   2023/3/21 18:24
  * @desc   普通文件列表
  */
-class ArticleListFragment : BaseMvvmFragment<FragmentArticleListBinding, ArticleListViewModel>(),
+class ArticleListFragment : BaseMvvmFragment<FragmentArticleListBinding>(),
     OnRefreshListener, OnLoadMoreListener {
     private var page = 0
     private var cId = 0
     private lateinit var mAdapter: ArticleAdapter
+    private val mViewModel: ArticleListViewModel by viewModel()
 
     companion object {
         fun newInstance(id: Int): ArticleListFragment {
