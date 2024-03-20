@@ -28,7 +28,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/state_bar"
                 app:layout_constraintBottom_toBottomOf="parent" />
 
-        <com.sum.common.view.EmptyDataView
+        <com.leif.common.view.EmptyDataView
                 android:id="@+id/view_empty_data"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

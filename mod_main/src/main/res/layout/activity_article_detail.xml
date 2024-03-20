@@ -4,14 +4,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <com.sum.common.view.TitleBar
+    <com.leif.common.view.TitleBar
             android:id="@+id/title_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:rightIcon="@mipmap/ic_collect_normal_new"/>
 
-    <com.sum.framework.base.BaseWebView
+    <com.leif.framework.base.BaseWebView
             android:id="@+id/web_view"
             android:layout_width="match_parent"
             android:layout_height="0dp"

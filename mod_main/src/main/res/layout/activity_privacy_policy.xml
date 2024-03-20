@@ -12,7 +12,7 @@
             android:layout_height="match_parent"
             android:background="@color/color_f0f2f4">
 
-        <com.sum.common.view.TitleBar
+        <com.leif.common.view.TitleBar
                 android:id="@+id/title_bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

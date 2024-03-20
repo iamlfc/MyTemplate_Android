@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        <com.sum.common.view.VideoImageView
+        <com.leif.common.view.VideoImageView
                 android:id="@+id/iv_video_cover"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"

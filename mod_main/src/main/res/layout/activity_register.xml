@@ -11,7 +11,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        <com.sum.common.view.TitleBar
+        <com.leif.common.view.TitleBar
                 android:id="@+id/title_bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -67,7 +67,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="MissingConstraints" />
 
-            <com.sum.framework.weights.ClearEditText
+            <com.leif.framework.weights.ClearEditText
                     android:id="@+id/et_phone"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/dp_36"
@@ -108,7 +108,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
 
-            <com.sum.framework.weights.ClearEditText
+            <com.leif.framework.weights.ClearEditText
                     android:id="@+id/et_password"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/dp_38"
@@ -147,7 +147,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
 
-            <com.sum.framework.weights.ClearEditText
+            <com.leif.framework.weights.ClearEditText
                     android:id="@+id/et_repassword"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/dp_38"
