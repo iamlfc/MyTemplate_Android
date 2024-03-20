@@ -92,7 +92,7 @@ class MineFragment : BaseMvvmFragment<FragmentMineBinding>(), OnRefreshListener,
 
             }
         } else {
-            mHeadBinding.tvName.text = getStringFromResource(R.string.mine_not_login)
+            mHeadBinding.tvName.text = getStringFromResource(com.sum.common.R.string.mine_not_login)
             mHeadBinding.tvDesc.text = getStringFromResource(com.sum.common.R.string.login_know_more_android)
         }
     }
@@ -191,7 +191,7 @@ class MineFragment : BaseMvvmFragment<FragmentMineBinding>(), OnRefreshListener,
 
     private fun initHeadView() {
         mHeadBinding = FragmentMineHeadBinding.inflate(LayoutInflater.from(requireContext()))
-        mHeadBinding.tvName.text = getStringFromResource(R.string.mine_not_login)
+        mHeadBinding.tvName.text = getStringFromResource(com.sum.common.R.string.mine_not_login)
         mAdapter.addHeadView(mHeadBinding.root)
     }
 

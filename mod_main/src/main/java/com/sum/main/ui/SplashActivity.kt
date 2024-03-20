@@ -24,7 +24,7 @@ class SplashActivity : BaseDataBindActivity<ActivitySplashBinding>() {
         }
         //倒计时
         countDownCoroutines(2, lifecycleScope, onTick = {
-            mBinding.tvSkip.text = getString(R.string.splash_time, it.plus(1).toString())
+            mBinding.tvSkip.text = getString(com.sum.common.R.string.splash_time, it.plus(1).toString())
         }) {
             MainServiceProvider.toMain(this)
             finish()

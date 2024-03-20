@@ -28,4 +28,5 @@ dependencies {
     kapt rootProject.depsLibs.glideCompiler
 
     compileOnly project(path: ':lib_framework')
+    compileOnly project(path: ':lib_common')
 }

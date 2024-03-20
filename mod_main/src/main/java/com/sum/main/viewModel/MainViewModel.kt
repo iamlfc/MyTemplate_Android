@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.liveData
 import com.sum.common.model.User
 import com.sum.framework.toast.TipsToast
+import com.sum.login.login.LoginRepository
 import com.sum.main.repository.HomeRepository
 import com.sum.network.viewmodel.BaseViewModel
 

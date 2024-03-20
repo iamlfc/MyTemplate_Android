@@ -59,18 +59,18 @@ class HomeFragment : BaseMvvmFragment<FragmentHomeBinding>(), OnRefreshListener 
 
     private fun refresh() {
         mViewModel.getBannerList().observe(this) { banners ->
-            banners?.let {
+            /*banners?.let {
                 mBinding?.bannerHome?.visible()
                 mBinding?.bannerHome?.setData(it)
             } ?: kotlin.run {
                 mBinding?.bannerHome?.gone()
-            }
+            }*/
             mBinding?.refreshLayout?.finishRefresh()
         }
 
         mViewModel.getProjectTab().observe(this) { tabs ->
             mProjectTabs =
-                mProjectTabs.filter { it.name == getStringFromResource(R.string.home_tab_video_title) }.toMutableList()
+                mProjectTabs.filter { it.name == getStringFromResource(com.sum.common.R.string.home_tab_video_title) }.toMutableList()
             tabs?.forEachIndexed { index, item ->
                 mProjectTabs.add(item)
                 mArrayTabFragments.append(index + 1, HomeTabFragment.newInstance(tabs[index].id))
@@ -87,7 +87,7 @@ class HomeFragment : BaseMvvmFragment<FragmentHomeBinding>(), OnRefreshListener 
 
     private fun initTab() {
         mArrayTabFragments.append(0, HomeVideoFragment())
-        mProjectTabs.add(0, ProjectTabItem(id = 0, getStringFromResource(R.string.home_tab_video_title)))
+        mProjectTabs.add(0, ProjectTabItem(id = 0, getStringFromResource(com.sum.common.R.string.home_tab_video_title)))
         activity?.let {
             mFragmentAdapter = ViewPage2FragmentAdapter(childFragmentManager, lifecycle, mArrayTabFragments)
 //            mFragmentAdapter = ViewPage2FragmentAdapter(it, mArrayTabFragments)
@@ -138,7 +138,7 @@ class HomeFragment : BaseMvvmFragment<FragmentHomeBinding>(), OnRefreshListener 
         TextView(requireContext()).apply {
             typeface = Typeface.DEFAULT_BOLD
             setTextSize(TypedValue.COMPLEX_UNIT_DIP, 15f)
-            setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+            setTextColor(ContextCompat.getColor(requireContext(), com.sum.common.R.color.black))
         }.also {
             it.text = tabFirst?.text
             tabFirst?.customView = it

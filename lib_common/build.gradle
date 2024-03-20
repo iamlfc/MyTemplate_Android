@@ -31,5 +31,4 @@ dependencies {
     kapt rootProject.depsLibs.arouterCompiler
 
     compileOnly project(path: ':lib_framework')
-    compileOnly project(path: ':lib_banner')
 }

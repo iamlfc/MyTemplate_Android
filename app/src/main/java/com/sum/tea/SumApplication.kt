@@ -10,7 +10,7 @@ import com.sum.framework.manager.AppFrontBackListener
 import com.sum.framework.log.LogUtil
 import com.sum.framework.manager.ActivityManager
 import com.sum.framework.toast.TipsToast
-import com.sum.login.di.moduleLogin
+import com.sum.main.di.appModule
 import com.sum.main.di.moduleMain
 import com.sum.stater.dispatcher.TaskDispatcher
 import com.sum.tea.task.InitMmkvTask
@@ -31,7 +31,6 @@ import org.koin.core.context.startKoin
 class SumApplication : Application() {
 
     private val modules = arrayListOf(
-        moduleLogin, //登录模块
         moduleMain, //主应用模块
     )
 

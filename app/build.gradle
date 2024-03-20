@@ -10,6 +10,13 @@ apply plugin: 'kotlin-kapt'
 
 apply from: '../dependencies.gradle'
 
+/**
+ * 定义打包时间函数
+ */
+static def packageTime() {
+    return new Date().format("yyyy_MM_dd", TimeZone.getTimeZone("UTC"))
+}
+
 android {
 
 
@@ -25,16 +32,16 @@ android {
         }
     }
     //修改生成的最终Apk文件名
-   /* android.applicationVariants.all { variant ->
+    android.applicationVariants.all { variant ->
         variant.outputs.all {
 //            variant.getPackageApplication().outputDirectory = new File("C:/Users/HSP/Desktop/apkOutputDir")
             if (variant.buildType.name == "release") {
-                outputFileName = "FuJinTianLiao_${defaultConfig.versionName}_${defaultConfig.versionCode}_${packageTime()}_release.apk"
+                outputFileName = "MyTemplate_${defaultConfig.versionName}_${defaultConfig.versionCode}_${packageTime()}_release.apk"
             } else {
-                outputFileName = "FuJinTianLiao_${defaultConfig.versionName}_${defaultConfig.versionCode}_${packageTime()}_debug.apk"
+                outputFileName = "MyTemplate_${defaultConfig.versionName}_${defaultConfig.versionCode}_${packageTime()}_debug.apk"
             }
         }
-    }*/
+    }
 
 }
 
@@ -93,12 +100,10 @@ dependencies {
 
 
     implementation project(path: ':mod_main')
-    implementation project(path: ':mod_login')
     implementation project(path: ':lib_framework')
     implementation project(path: ':lib_network')
     implementation project(path: ':lib_common')
     implementation project(path: ':lib_stater')
-    implementation project(path: ':lib_banner')
     implementation project(path: ':lib_glide')
     implementation project(path: ':lib_room')
 }
